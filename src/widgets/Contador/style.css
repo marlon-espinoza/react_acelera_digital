@@ -1,0 +1,95 @@
+.numero {
+    font-size: 5rem;
+    color: black;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    background-color: rgb(239, 234, 234);
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
+.bg-dark {
+    background-color: black;
+}
+
+.btn-radius {
+    color: black;
+    background-color: rgb(54, 151, 248);
+    border-radius: 50%;
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/* .number { 
+    font-size: 150px;
+    color: white;
+    border-radius: 50%;
+    border-width: 4px;
+    border: 1px solid #E3EBF6 !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+}
+
+.align-center {
+    justify-content: center;
+}
+
+.bg-gray {
+    background: rgb(37, 36, 47);
+}
+
+.bg-white {
+    background: white;
+}
+
+.font-gray {
+    color: rgb(37, 36, 47);
+}
+
+.w-xl {
+    width: 12rem;;
+}
+
+.h-xl {
+    height: 12rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.btn-rounded {
+    border-radius: 50%;
+    border: 2px solid blue;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+}
+ */
