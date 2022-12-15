@@ -1,4 +1,6 @@
 import TravelListItem from "./TravelListItem";
+import { useState, useEffect } from "react";
+import './style.css';
 
 const List = [
     {id: 1, image: null, name: 'Viaje a Cancún', cost: 2000, max: 5},
@@ -8,9 +10,15 @@ const List = [
 ];
 
 const TravelList = () => {
+    
+    const [ list, setList ] = useState([]);
+
+    useEffect(()=> {
+        
+    },[])
 
     return <>
-            <div>
+            <div className="row">
                 {List.map((item, index) => {
                     // const listItem = {
                     //     id:item.id,
@@ -19,7 +27,7 @@ const TravelList = () => {
                     //     max: item.max,
                     //     image: item.image
                     // }
-                    return <div key={index}>
+                    return <div className="col-4" key={index}>
                                 <TravelListItem id={item.id} 
                                                 name={item.name}
                                                 cost={item.cost}
