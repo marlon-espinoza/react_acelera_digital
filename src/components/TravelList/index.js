@@ -1,25 +1,51 @@
 import TravelListItem from "./TravelListItem";
 import { useState, useEffect } from "react";
 import './style.css';
-
-const List = [
-    {id: 1, image: null, name: 'Viaje a Cancún', cost: 2000, max: 5},
-    {id: 2, image: null, name: 'Viaje a Quito', cost: 2000, max: 5},
-    {id: 3, image: null, name: 'Viaje a Lima', cost: 2000, max: 5},
-    {id: 4, image: null, name: 'Viaje a Bogotá', cost: 2000, max: 5},
-];
+import RestClient from "../../services/RestClient";
 
 const TravelList = () => {
     
     const [ list, setList ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
 
     useEffect(()=> {
-        
-    },[])
+        getTravelListAxios();
+    }, []);
+
+    const getTravelList = () => {
+        setLoading(true);
+        fetch("https://my-json-server.typicode.com/marlon-espinoza/tech_academy/travels", {
+                method: 'GET'
+            })
+            .then(async res => {
+                setLoading(false);
+                const data = await res.json();
+                setList(data);
+            })
+            .catch(err => {
+                setLoading(false);
+            })
+    }
+
+    const getTravelListAxios = () => {
+        setLoading(true);
+        RestClient.getTravels().then(res => {
+            setLoading(false);
+            const { data } = res;
+            setList(data);
+        })
+        .catch(err => {
+            setLoading(false);
+        })
+    }
+    
 
     return <>
             <div className="row">
-                {List.map((item, index) => {
+                {(loading) && 
+                    <div>Cargando...</div>
+                }
+                {list.map((item, index) => {
                     // const listItem = {
                     //     id:item.id,
                     //     name: item.name,
